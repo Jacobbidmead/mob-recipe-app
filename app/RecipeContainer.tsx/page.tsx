@@ -1,5 +1,6 @@
 "use client";
 
+import { Bookmarks } from "../components/Bookmarks";
 import { RecipeCard } from "../components/RecipeCard";
 import { useState } from "react";
 
@@ -22,13 +23,21 @@ interface RecipesContainerProps {
 }
 
 export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) => {
-  const [bookMarks, setBookMarks] = useState([]);
+  const [bookmarks, setBookmarks] = useState<Recipe[]>([]);
+
+  const handleAddBookmark = (recipe: Recipe) => {
+    if (!bookmarks.find((r) => r.id === recipe.id)) {
+      setBookmarks([...bookmarks, recipe]);
+    }
+  };
+
   return (
     <>
       <div className="grid grid-cols-4 gap-4">
         {recipes.map((recipe) => (
           <RecipeCard key={recipe.id} recipe={recipe} />
         ))}
+        <Bookmarks bookmarkedRecipes={bookmarks} />
       </div>
     </>
   );
