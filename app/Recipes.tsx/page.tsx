@@ -1,12 +1,21 @@
 import { RecipeCard } from "../components/RecipeCard";
 
-interface Recipes {
+interface Image {
+  id: number;
   title: string;
   url: string;
-  id: number;
+  width: string;
+  height: string;
 }
 
-const fetchData = async (): Promise<Recipes[]> => {
+interface Recipe {
+  id: number;
+  title: string;
+  slug: string;
+  image: Image[];
+}
+
+const fetchData = async (): Promise<Recipe[]> => {
   const username = "mob-api";
   const password = "9r7rey5567ce0m7hbt1u";
   const url = "https://api.mob.co.uk/task/recipes.json";
@@ -33,22 +42,25 @@ const fetchData = async (): Promise<Recipes[]> => {
     }
 
     const data = await res.json();
-    console.log("Fetched data:", data);
+    console.log("JSON response:", data);
 
-    const recipeData: Recipes[] = data;
+    const recipeData: Recipe[] = data.recipes;
 
     return recipeData;
   } catch (error) {
     console.error("Error fetching data:", error);
+    return [];
   }
 };
-export const Recipes: React.FC = async () => {
+
+export const Recipes = async () => {
   const recipes = await fetchData();
+
   return (
-    <>
-      <div className="grid grid-cols-4">
-        <RecipeCard recipes={recipes} />
-      </div>
-    </>
+    <div className="grid grid-cols-4 gap-4">
+      {recipes.map((recipe) => (
+        <RecipeCard key={recipe.id} recipe={recipe} />
+      ))}
+    </div>
   );
 };
