@@ -1,6 +1,7 @@
 "use client";
 
 import { RecipeCard } from "../components/RecipeCard";
+import { useState } from "react";
 
 interface Recipe {
   id: number;
@@ -21,6 +22,7 @@ interface RecipesContainerProps {
 }
 
 export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) => {
+  const [bookMarks, setBookMarks] = useState([]);
   return (
     <>
       <div className="grid grid-cols-4 gap-4">
