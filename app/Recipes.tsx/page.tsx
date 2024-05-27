@@ -1,3 +1,4 @@
+import { RecipeContainer } from "../RecipeContainer.tsx/page";
 import { RecipeCard } from "../components/RecipeCard";
 
 interface Image {
@@ -56,11 +57,5 @@ const fetchData = async (): Promise<Recipe[]> => {
 export const Recipes = async () => {
   const recipes = await fetchData();
 
-  return (
-    <div className="grid grid-cols-4 gap-4">
-      {recipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} />
-      ))}
-    </div>
-  );
+  return <RecipeContainer recipes={recipes} />;
 };
