@@ -35,7 +35,7 @@ export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) =>
     <>
       <div className="grid grid-cols-4 gap-4">
         {recipes.map((recipe) => (
-          <RecipeCard key={recipe.id} recipe={recipe} />
+          <RecipeCard key={recipe.id} recipe={recipe} onBookmark={handleAddBookmark} />
         ))}
         <Bookmarks bookmarkedRecipes={bookmarks} />
       </div>
