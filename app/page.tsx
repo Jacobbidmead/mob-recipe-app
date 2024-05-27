@@ -1,5 +1,9 @@
-import Image from "next/image";
+import { Recipes } from "./Recipes.tsx/page";
 
 export default function Home() {
-  return <></>;
+  return (
+    <>
+      <Recipes />
+    </>
+  );
 }
