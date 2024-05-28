@@ -7,6 +7,7 @@ interface RecipeCardProps {
   onBookmark: (recipe: Recipe) => void;
   removeRecipeCard: () => void;
   isBookmarked: boolean;
+  showRemoveButton: boolean;
 }
 
 export const RecipeCard: React.FC<RecipeCardProps> = ({
@@ -14,6 +15,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   onBookmark,
   removeRecipeCard,
   isBookmarked,
+  showRemoveButton,
 }) => {
   const handleBookmarkClick = () => {
     onBookmark(recipe);
@@ -24,7 +26,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
       <div>{recipe.title}</div>
       {recipe.image.length > 0 && <img src={recipe.image[0].url} alt={recipe.title} />}
       <button onClick={handleBookmarkClick}>Bookmark</button>
-      {isBookmarked && <button onClick={removeRecipeCard}>Remove</button>}
+      {isBookmarked && showRemoveButton && <button onClick={removeRecipeCard}>Remove</button>}
     </div>
   );
 };
