@@ -11,6 +11,7 @@ interface RecipesContainerProps {
 
 export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) => {
   const [bookmarks, setBookmarks] = useState<Recipe[]>([]);
+  const [showBookmarks, setShowBookmarks] = useState<boolean>(false);
 
   const handleAddBookmark = (recipe: Recipe) => {
     if (!bookmarks.find((r) => r.id === recipe.id)) {
@@ -24,22 +25,31 @@ export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) =>
     setBookmarks(updatedBookmarks);
   };
 
+  const toggleView = () => {
+    setShowBookmarks((prev) => !prev);
+  };
+
   return (
     <>
-      <div className="grid grid-cols-4 gap-4 p-10">
-        {recipes &&
-          recipes.map((recipe, index) => (
-            <RecipeCard
-              key={recipe.id}
-              recipe={recipe}
-              onBookmark={handleAddBookmark}
-              removeRecipeCard={() => removeRecipeCard(index)}
-              isBookmarked={!!bookmarks.find((r) => r.id === recipe.id)}
-              showRemoveButton={false}
-            />
-          ))}
-      </div>
-      <Bookmarks bookmarkedRecipes={bookmarks} removeBookmark={removeRecipeCard} />
+      <button onClick={toggleView}>{showBookmarks ? "Show All Recipes" : "Show Bookmarks"}</button>
+
+      {showBookmarks ? (
+        <Bookmarks bookmarkedRecipes={bookmarks} removeBookmark={removeRecipeCard} />
+      ) : (
+        <div className="grid grid-cols-4 gap-4 p-10">
+          {recipes &&
+            recipes.map((recipe, index) => (
+              <RecipeCard
+                key={recipe.id}
+                recipe={recipe}
+                onBookmark={handleAddBookmark}
+                removeRecipeCard={() => removeRecipeCard(index)}
+                isBookmarked={!!bookmarks.find((r) => r.id === recipe.id)}
+                showRemoveButton={false}
+              />
+            ))}
+        </div>
+      )}
     </>
   );
 };
