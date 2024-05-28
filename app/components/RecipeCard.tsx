@@ -22,8 +22,10 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   };
 
   return (
-    <div className="border-black border-solid border-2 p-10">
-      {recipe.image.length > 0 && <img src={recipe.image[0].url} alt={recipe.title} />}
+    <div className=" p-10 ">
+      {recipe.image.length > 0 && (
+        <img src={recipe.image[0].url} alt={recipe.title} className="rounded-custom" />
+      )}
       <div className="flex flex-row">
         <div className="text-desktop">{recipe.title}</div>
         {isBookmarked ? (
