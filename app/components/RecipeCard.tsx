@@ -25,9 +25,21 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
     <div className="border-black border-solid border-2 p-10">
       {recipe.image.length > 0 && <img src={recipe.image[0].url} alt={recipe.title} />}
       <div className="flex flex-row">
-        <div className="text-[10px]">{recipe.title}</div>
+        <div className="text-desktop">{recipe.title}</div>
         {isBookmarked ? (
-          "saved"
+          <button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              className="size-4">
+              <path
+                fillRule="evenodd"
+                d="M6.32 2.577a49.255 49.255 0 0 1 11.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 0 1-1.085.67L12 18.089l-7.165 3.583A.75.75 0 0 1 3.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93Z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
         ) : (
           <button onClick={handleBookmarkClick}>
             <svg
