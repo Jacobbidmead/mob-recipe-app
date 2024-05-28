@@ -1,20 +1,5 @@
 import { RecipeContainer } from "../RecipeContainer.tsx/page";
-import { RecipeCard } from "../components/RecipeCard";
-
-interface Image {
-  id: number;
-  title: string;
-  url: string;
-  width: string;
-  height: string;
-}
-
-interface Recipe {
-  id: number;
-  title: string;
-  slug: string;
-  image: Image[];
-}
+import { Recipe } from "../types/interfaces";
 
 const fetchData = async (): Promise<Recipe[]> => {
   const username = "mob-api";

@@ -3,21 +3,8 @@
 import { Bookmarks } from "../components/Bookmarks";
 import { RecipeCard } from "../components/RecipeCard";
 import { useState } from "react";
+import { Recipe } from "../types/interfaces";
 
-interface Recipe {
-  id: number;
-  title: string;
-  slug: string;
-  image: Image[];
-}
-
-interface Image {
-  id: number;
-  title: string;
-  url: string;
-  width: string;
-  height: string;
-}
 interface RecipesContainerProps {
   recipes: Recipe[];
 }

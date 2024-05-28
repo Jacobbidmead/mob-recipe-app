@@ -2,21 +2,7 @@
 
 import React from "react";
 import { RecipeCard } from "./RecipeCard";
-
-interface Recipe {
-  id: number;
-  title: string;
-  slug: string;
-  image: Image[];
-}
-
-interface Image {
-  id: number;
-  title: string;
-  url: string;
-  width: string;
-  height: string;
-}
+import { Recipe } from "../types/interfaces";
 
 interface BookmarksProps {
   bookmarkedRecipes: Recipe[];

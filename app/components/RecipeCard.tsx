@@ -1,16 +1,6 @@
 "use client";
-interface Recipe {
-  id: number;
-  title: string;
-  slug: string;
-  image: {
-    id: number;
-    title: string;
-    url: string;
-    width: string;
-    height: string;
-  }[];
-}
+
+import { Recipe } from "../types/interfaces";
 
 interface RecipeCardProps {
   recipe: Recipe;
