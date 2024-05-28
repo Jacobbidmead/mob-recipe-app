@@ -15,9 +15,10 @@ export const Bookmarks: React.FC<BookmarksProps> = ({ bookmarkedRecipes }) => {
 
   return (
     <div className="grid grid-cols-4 gap-4">
-      {bookmarkedRecipes.map((recipe) => (
-        <RecipeCard key={recipe.id} recipe={recipe} onBookmark={() => {}} />
-      ))}
+      {bookmarkedRecipes &&
+        bookmarkedRecipes.map((recipe) => (
+          <RecipeCard key={recipe.id} recipe={recipe} onBookmark={() => {}} />
+        ))}
     </div>
   );
 };
