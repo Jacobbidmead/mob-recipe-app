@@ -9,10 +9,6 @@ interface BookmarksProps {
 }
 
 export const Bookmarks: React.FC<BookmarksProps> = ({ bookmarkedRecipes }) => {
-  if (bookmarkedRecipes.length === 0) {
-    return <div>No bookmarked recipes</div>;
-  }
-
   return (
     <div className="grid grid-cols-4 gap-4">
       {bookmarkedRecipes &&
