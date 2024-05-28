@@ -8,10 +8,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      fontSize: {
+        "desktop-text": "10px", // Custom text size for desktop
+      },
+      borderRadius: {
+        custom: "20px", // Custom border radius
+      },
+      screens: {
+        sm: "480px", // Custom screen size for mobile
+        m: "1024px", // Custom screen size for desktop
+        lg: "1440px", // Custom screen size for large screens
       },
     },
   },
