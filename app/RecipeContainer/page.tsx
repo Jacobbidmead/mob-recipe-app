@@ -1,6 +1,6 @@
 "use client";
 
-import { Bookmarks } from "../components/Bookmarks";
+import { Bookmarks } from "../Bookmarks/page";
 import { RecipeCard } from "../components/RecipeCard";
 import { useState } from "react";
 import { Recipe } from "../types/interfaces";
@@ -20,7 +20,7 @@ export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) =>
 
   return (
     <>
-      <div className="grid grid-cols-4 gap-4">
+      <div className="grid grid-cols-4 gap-4 p-10">
         {recipes &&
           recipes.map((recipe) => (
             <RecipeCard key={recipe.id} recipe={recipe} onBookmark={handleAddBookmark} />

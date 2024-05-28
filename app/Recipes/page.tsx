@@ -1,4 +1,4 @@
-import { RecipeContainer } from "../RecipeContainer.tsx/page";
+import { RecipeContainer } from "../RecipeContainer/page";
 import { Recipe } from "../types/interfaces";
 
 const fetchData = async (): Promise<Recipe[]> => {

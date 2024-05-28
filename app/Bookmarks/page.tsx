@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { RecipeCard } from "./RecipeCard";
+import { RecipeCard } from "../components/RecipeCard";
 import { Recipe } from "../types/interfaces";
 
 interface BookmarksProps {
