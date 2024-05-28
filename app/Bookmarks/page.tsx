@@ -19,6 +19,7 @@ export const Bookmarks: React.FC<BookmarksProps> = ({ bookmarkedRecipes, removeB
             recipe={recipe}
             onBookmark={() => {}}
             removeRecipeCard={() => removeBookmark(index)}
+            isBookmarked={true}
           />
         ))}
     </div>

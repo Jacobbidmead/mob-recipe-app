@@ -34,6 +34,7 @@ export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) =>
               recipe={recipe}
               onBookmark={handleAddBookmark}
               removeRecipeCard={() => removeRecipeCard(index)}
+              isBookmarked={!!bookmarks.find((r) => r.id === recipe.id)}
             />
           ))}
       </div>
