@@ -18,15 +18,28 @@ export const RecipeContainer: React.FC<RecipesContainerProps> = ({ recipes }) =>
     }
   };
 
+  const removeRecipeCard = (index: number) => {
+    const updatedBookmarks = [...bookmarks];
+    updatedBookmarks.splice(index, 1);
+    setBookmarks(updatedBookmarks);
+  };
+
   return (
     <>
       <div className="grid grid-cols-4 gap-4 p-10">
         {recipes &&
-          recipes.map((recipe) => (
-            <RecipeCard key={recipe.id} recipe={recipe} onBookmark={handleAddBookmark} />
+          recipes.map((recipe, index) => (
+            <RecipeCard
+              key={recipe.id}
+              recipe={recipe}
+              onBookmark={handleAddBookmark}
+              removeRecipeCard={() => removeRecipeCard(index)}
+            />
           ))}
       </div>
-      <Bookmarks bookmarkedRecipes={bookmarks} />
+      <Bookmarks bookmarkedRecipes={bookmarks} removeBookmark={removeRecipeCard} />
     </>
   );
 };
+
+export default RecipeContainer;
