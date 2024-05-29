@@ -22,9 +22,13 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   };
 
   return (
-    <div className="p-10">
+    <div className="p-8 bg-contain  object-cover">
       {recipe.image.length > 0 && (
-        <img src={recipe.image[0].url} alt={recipe.title} className="rounded-custom" />
+        <img
+          src={recipe.image[0].url}
+          alt={recipe.title}
+          className="rounded-custom w-full h-40 object-cover"
+        />
       )}
       <div className="flex flex-row items-center justify-between mt-2">
         <div className="text-desktop">{recipe.title}</div>
