@@ -65,11 +65,14 @@ This project is a simple recipe management application built using Next.js & Typ
 ### Data flow
 
 A[Recipes.tsx] -->|Fetch data on server| B[RecipeContainer.tsx]
+
 B -->|Pass props| C[RecipeCard.tsx]
+
 B -->|Pass props| D[Bookmarks.tsx]
 
-    C -->|User action: Bookmark| B
-    D -->|User action: Remove bookmark| B
+C -->|User action: Bookmark| B
+    
+D -->|User action: Remove bookmark| B
 
 #### Explanation of Functions
 
