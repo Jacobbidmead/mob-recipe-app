@@ -98,10 +98,10 @@ D -->|User action: Remove bookmark| B
 
 #### Conclusion
 
-This project demonstrates a well-structured approach to building a recipe management application with Next.js, leveraging server-side rendering for data fetching and passing props to client-side components for dynamic interactivity. The separation of concerns ensures maintainability and scalability, allowing for easy additions and modifications in the future.
+This project demonstrates a structured approach to building a recipe management application with Next.js, Using server-side rendering for data fetching and passing props to client-side components for dynamic interactivity. The separation of concerns ensures maintainability and scalability, allowing for easy additions and modifications in the future.
 
-By fetching data on the server, the application delivers content faster and enhances SEO, while the client-side components handle user interactions smoothly, providing a seamless user experience.
+By fetching data on the server, the application delivers content faster and enhances SEO, while the client-side components handle user interactions. This is an advantage of Next.js App router and is a modern way of creating fullstack web applications with JavaScript framworks.
 
 ### Future changes
 
-Due to time constraints, I have not built in the mobile view slider to hold the bookmarks. The book marks are held in a page which would work well on desktop and large screen sizes, but I would like to add the mobile slider, per the designs, later on in the project.
+Due to time constraints, I have not built in the mobile view slider to hold the bookmarks. Currently, the bookmarks are held in a page where the user can view and remove them, which would work well on desktop and large screen sizes, however I would like to add the mobile slider, per the designs, later on in the project. I could do this using MUI library and creating a function to only show the slider at mobile size.
