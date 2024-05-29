@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontSize: {
-        desktop: "10px", // Custom text size for desktop
+        desktop: "14px", // Custom text size for desktop
       },
       borderRadius: {
         custom: "20px", // Custom border radius
