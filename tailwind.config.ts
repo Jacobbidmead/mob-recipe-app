@@ -10,12 +10,13 @@ const config: Config = {
     extend: {
       fontSize: {
         desktop: "14px", // Custom text size for desktop
+        mobile: "10px",
       },
       borderRadius: {
         custom: "20px", // Custom border radius
       },
       screens: {
-        sm: "480px", // Custom screen size for mobile
+        sm: "390px", // Custom screen size for mobile
         m: "1024px", // Custom screen size for desktop
         lg: "1440px", // Custom screen size for large screens
       },

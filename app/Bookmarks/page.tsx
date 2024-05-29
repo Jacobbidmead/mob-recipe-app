@@ -11,7 +11,7 @@ interface BookmarksProps {
 
 export const Bookmarks: React.FC<BookmarksProps> = ({ bookmarkedRecipes, removeBookmark }) => {
   return (
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid m:grid-cols-4 m:gap-4 sm:grid-cols-2 sm:gap-2">
       {bookmarkedRecipes &&
         bookmarkedRecipes.map((recipe, index) => (
           <RecipeCard

@@ -22,7 +22,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
   };
 
   return (
-    <div className="p-6 ">
+    <div className="flex justify-center flex-col">
       {recipe.image.length > 0 && (
         <div className="w-full h-[70%]">
           <img
@@ -33,7 +33,7 @@ export const RecipeCard: React.FC<RecipeCardProps> = ({
         </div>
       )}
       <div className="flex flex-row items-center justify-between mt-2">
-        <div className="text-desktop">{recipe.title}</div>
+        <div className="m:text-desktop sm:text-mobile">{recipe.title}</div>
         <div className="flex items-center">
           {!showRemoveButton && (
             <span onClick={handleBookmarkClick} className="mr-2">
