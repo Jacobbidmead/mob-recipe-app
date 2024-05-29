@@ -9,15 +9,23 @@ This project is a simple recipe management application built using Next.js & Typ
 ### Diagram of file structure
 
 ├── app
+
 │ ├── Recipes.tsx // Server-side component to fetch data
+
 │ ├── RecipeContainer.tsx // Client-side component to manage and display recipes
+
 │ ├── Bookmarks.tsx // Component to display bookmarked recipes
+
 │ ├── components
 │ │ └── RecipeCard.tsx // Reusable component to display individual recipes
+
 │ └── types
 │ └── interfaces.ts // TypeScript interfaces for type definitions
+
 ├── public
+
 ├── styles
+
 └── README.md // Project documentation
 
 1. **Recipes.tsx (Server-side)**
