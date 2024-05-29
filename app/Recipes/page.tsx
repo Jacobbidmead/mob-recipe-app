@@ -2,9 +2,9 @@ import { RecipeContainer } from "../RecipeContainer/page";
 import { Recipe } from "../types/interfaces";
 
 const fetchData = async (): Promise<Recipe[]> => {
-  const username = "mob-api";
-  const password = "9r7rey5567ce0m7hbt1u";
-  const url = "https://api.mob.co.uk/task/recipes.json";
+  const username = process.env.NEXT_PUBLIC_USERNAME;
+  const password = process.env.NEXT_PUBLIC_PASSWORD;
+  const url = process.env.NEXT_PUBLIC_API_URL;
 
   if (!username || !password || !url) {
     console.error("Missing environment variables");
